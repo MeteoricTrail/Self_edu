@@ -27,7 +27,7 @@ async function queryOpenAI(prompt: string): Promise<string> {
         );
         console.log("OpenAI API Response:", JSON.stringify(response.data));
         const content = response.data.choices[0].message.content;
-        const match = content.match(/(David Smith 大卫 斯密斯|Yueling Wang 月林张|Huawen Wu 华文吴|Annie Lee 李安妮)/);
+        const match = content.match(/(David Smith 大卫 斯密斯|Yueling Wang 月林张|Huawen Wu 华文吴|Annie Lee 李安妮)/); //正则表达式匹配
         if (match) {
             return match[0];
         }
@@ -46,7 +46,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     const input = event.queryStringParameters?.query || '';
 
     // 构造OpenAI的prompt
-    const prompt = `Given the following names and their translations:
+    const prompt = `Given the following names translations:
     David Smith 大卫 斯密斯,
     Yueling Wang 月林张,
     Huawen Wu 华文吴,
