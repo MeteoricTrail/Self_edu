@@ -1,0 +1,14 @@
+{
+  "name": "ai_fuzzy_search",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "FuzzySearch_1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Orion",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.3"
+  }
+}
