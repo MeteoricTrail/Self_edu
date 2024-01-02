@@ -6,13 +6,13 @@ interface OpenAIResponse {
 }
 
 async function queryOpenAI(prompt: string): Promise<string> {
-    const openAiApiKey = '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'; // 替换为你的API密钥
+    const openAiApiKey = "API_KEY" // 从环境变量获取OpenAI API密钥
     const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
 
     try {
         const response = await axios.post<OpenAIResponse>(
             apiUrl,
-            { prompt, max_tokens: 100 }, // 可以根据需要调整
+            { prompt, max_tokens: 100 }, 
             { headers: { 'Authorization': `Bearer ${openAiApiKey}` } }
         );
         return response.data.choices[0].text;

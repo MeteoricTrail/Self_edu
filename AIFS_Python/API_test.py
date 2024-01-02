@@ -1,8 +1,7 @@
 import requests
 
 def query_openai_api(prompt):
-    # 替换为你的OpenAI API密钥
-    openai_api_key = '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'
+    openai_api_key = 'API_KEY' #从环境变量获取OpenAI API密钥
     headers = {
         'Authorization': f'Bearer {openai_api_key}',
         'Content-Type': 'application/json'
